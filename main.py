@@ -19,6 +19,6 @@ async def on_voice_state_update(member, before, after):
         for channel in guild.channels:
             if str(channel.type) == 'text':
                 channelTo = client.get_channel(channel.id)
-        await channelTo.send(f'{member.display_name} is now hanging out in {after.channel.name}!')
+        await channelTo.send(f'{member.display_name} is now hanging out in {after.channel.name}!', delete_after=300)
 
 client.run(TOKEN)
